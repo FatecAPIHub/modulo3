@@ -1,4 +1,5 @@
 services:
+#---------------ZOOKEEPER---------------------------
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: zookeeper
@@ -9,7 +10,7 @@ services:
       - "2181:2181"
     networks:
       - kafka-network
-
+#---------------KAFKA---------------------------
   kafka:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka
@@ -35,7 +36,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
+#---------------OPENJDK(SPRINGBOOT)---------------------------
   kafka-consumer:
     build: .
     container_name: kafka-consumer
@@ -49,6 +50,8 @@ services:
     restart: unless-stopped
     networks:
       - kafka-network
+
+#---------------METADATA---------------------------
 
 networks:
   kafka-network:
