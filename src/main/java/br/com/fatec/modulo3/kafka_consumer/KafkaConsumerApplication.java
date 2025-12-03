@@ -16,5 +16,8 @@ public class KafkaConsumerApplication {
 
 @Component
 class KafkaMessageConsumer {
-    @KafkaListener
-}
+    @KafkaListener(topics = "${kafka.topic.name}", groupId = "${kafka.consumer.group-id}")
+    public void listen(String message) {
+        System.out.println("A mensagem chegou: " + message);
+    }
+}   
