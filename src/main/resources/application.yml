@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: kafka-consumer-lambda
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP:meu-grupo-consumidor}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+kafka:
+  topic:
+    name: ${KAFKA_TOPIC_NAME:meu-topico}
+  consumer:
+    group-id: ${KAFKA_CONSUMER_GROUP:meu-grupo-consumidor}
+
+logging:
+  level:
+    org.apache.kafka: INFO
+    org.springframework.kafka: INFO

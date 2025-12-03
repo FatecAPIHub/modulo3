@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.fatec.modulo3.kafka_consumer.KafkaConsumerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.378 s -- in br.com.fatec.modulo3.kafka_consumer.KafkaConsumerApplicationTests

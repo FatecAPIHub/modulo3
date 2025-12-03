@@ -8,16 +8,7 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 public class KafkaConsumerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(KafkaConsumerApplication.class, args);
-	}
-
-}
-
-@Component
-class KafkaMessageConsumer {
-    @KafkaListener(topics = "${kafka.topic.name}", groupId = "${kafka.consumer.group-id}")
-    public void listen(String message) {
-        System.out.println("A mensagem chegou: " + message);
+    public static void main(String[] args) {
+        SpringApplication.run(KafkaConsumerApplication.class, args);
     }
-}   
+}
